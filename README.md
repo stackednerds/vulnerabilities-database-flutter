@@ -60,14 +60,14 @@ The `SplashActivity` widget is a splash screen that appears when the app is laun
   );
   ```
 - Replace your `shodan api key` with yours in code below in the `search_activity.dart` file:
-```dart
-var response = await Dio().get('https://exploits.shodan.io/api/search?query=$searchTerm&key={Put your shodan api key here}');
-      setState(() {
-        exploits = response.data['matches'] as List<dynamic>;
-        isSearchingInProgress = false;
-        searchWord = searchTerm;
-      });
-```
+  ```dart
+  var response = await Dio().get('https://exploits.shodan.io/api/search?query=$searchTerm&key={Put your shodan api key here}');
+        setState(() {
+          exploits = response.data['matches'] as List<dynamic>;
+          isSearchingInProgress = false;
+          searchWord = searchTerm;
+        });
+  ```
 
 ## Author
-This project was developed by Saher Muhamed @ 23/6/2023.
+This project was developed by **Saher Muhamed** @ 23/6/2023.
