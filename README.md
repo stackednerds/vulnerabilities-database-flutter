@@ -18,15 +18,9 @@ This is a Flutter project that implements a Vulnerability Database app. It allow
 - Support opening full articles in mobile web browser via icon
 
 ## Screenshots
-![](screenshots/Screenshot_2023-06-23-23-49-41-478_com.example.vulnerabilities_database.jpg)
-![](screenshots/Screenshot_2023-06-23-23-49-45-848_com.example.vulnerabilities_database.jpg)
-![](screenshots/Screenshot_2023-06-23-23-51-34-858_com.example.vulnerabilities_database.jpg)
-![](screenshots/Screenshot_2023-06-23-23-51-49-356_com.example.vulnerabilities_database.jpg)
-![](screenshots/Screenshot_2023-06-23-23-51-53-970_com.example.vulnerabilities_database.jpg)
-![](screenshots/Screenshot_2023-06-23-23-52-05-267_com.example.vulnerabilities_database.jpg)
-![](screenshots/Screenshot_2023-06-23-23-52-12-382_com.example.vulnerabilities_database.jpg)
-![](screenshots/Screenshot_2023-06-23-23-52-24-406_com.example.vulnerabilities_database.jpg)
-![](screenshots/Screenshot_2023-06-23-23-52-29-404_com.example.vulnerabilities_database.jpg)
+![](screenshots/1687555241055.jpg)
+![](screenshots/1687555295077.jpg)
+![](screenshots/1687555323978.jpg)
 
 ## Activities
 ### News Page
