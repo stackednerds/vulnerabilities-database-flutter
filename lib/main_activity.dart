@@ -17,7 +17,7 @@ class _MainActivityState extends State<MainActivity> {
 
   final List<Widget> _widgetOptions = <Widget>[
     const NewsPage(),
-    SearchActivity(),
+    const SearchActivity(),
   ];
 
   void _onItemTapped(int index) {
