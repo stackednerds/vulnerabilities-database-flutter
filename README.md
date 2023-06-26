@@ -16,11 +16,12 @@ This is a Flutter project that implements a Vulnerability Database app. It allow
 - Search for exploits and display search result
 - Support to copy any article link in the clipboard
 - Support opening full articles in mobile web browser via icon
+- **(new)** Now you can scan your local network
 
 ## Screenshots
-![](screenshots/1687555241055.jpg)
-![](screenshots/1687555295077.jpg)
-![](screenshots/1687555323978.jpg)
+![](screenshots/1687737964196.jpg)
+![](screenshots/1687737993963.jpg)
+![](screenshots/1687738025674.jpg)
 
 ## Activities
 ### News Page
@@ -71,3 +72,7 @@ var response = await Dio().get('https://exploits.shodan.io/api/search?query=$sea
 
 ## Author
 This project was developed by Saher Muhamed @ 23/6/2023.
+
+## Updates v1.0.0
+- Adding a new feature **LAN scanning**, you can now scan your current network that you are connected to and display all connected devices.
+- update date **26/6/2023**

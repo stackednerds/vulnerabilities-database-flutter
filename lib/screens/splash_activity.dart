@@ -43,7 +43,7 @@ class _SplashActivityState extends State<SplashActivity> {
               alignment: Alignment.topLeft,
               margin: const EdgeInsets.only(left: 8.0, top: 8.0),
               child: const Text(
-                'version 1.0 beta',
+                'version 1.0.1 beta',
                 style: TextStyle(
                     fontFamily: 'Ubuntu',
                     fontSize: 14.0,

@@ -25,6 +25,9 @@ dependencies:
   intl: ^0.17.0
   url_launcher: ^6.0.0
   connectivity_plus: ^4.0.1
+  network_tools: ^3.0.0
+  network_info_plus: ^2.1.0
+
 
 dev_dependencies:
   flutter_test:
