@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vulnerabilities_database/screens/news_activity.dart';
-import 'package:vulnerabilities_database/screens/scan_lan_activity.dart';
 import 'package:vulnerabilities_database/screens/search_activity.dart';
 
 class MainActivity extends StatefulWidget {
@@ -13,12 +12,12 @@ class MainActivity extends StatefulWidget {
 
 class _MainActivityState extends State<MainActivity> {
 
+
   int _selectedIndex = 0;
 
   final List<Widget> _widgetOptions = <Widget>[
     const NewsPage(),
-    const SearchActivity(),
-    const LanScanning()
+    SearchActivity(),
   ];
 
   void _onItemTapped(int index) {
@@ -53,11 +52,9 @@ class _MainActivityState extends State<MainActivity> {
               icon: Icon(FontAwesomeIcons.magnifyingGlass),
               label: 'Search exploits',
             ),
-            BottomNavigationBarItem(
-              icon: Icon(FontAwesomeIcons.networkWired),
-              label: 'LAN scan',
-            ),
           ],
+
+
         ),
       ),
     );
