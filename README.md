@@ -73,6 +73,6 @@ var response = await Dio().get('https://exploits.shodan.io/api/search?query=$sea
 ## Author
 This project was developed by Saher Muhamed @ 23/6/2023.
 
-## Updates v1.0.0
+## Updates v1.0.1
 - Adding a new feature **LAN scanning**, you can now scan your current network that you are connected to and display all connected devices.
 - update date **26/6/2023**
