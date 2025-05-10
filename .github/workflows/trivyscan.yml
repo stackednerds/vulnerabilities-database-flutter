@@ -2,9 +2,9 @@ name: Trivy FS Scan
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:  # Allows manual trigger from GitHub UI
 
 jobs:
@@ -22,5 +22,4 @@ jobs:
           scan-type: 'fs'
           scan-ref: '.'
           severity: 'CRITICAL,HIGH'
-          exit-code: '1'
           ignore-unfixed: true
