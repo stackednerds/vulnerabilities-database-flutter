@@ -22,4 +22,5 @@ jobs:
           scan-type: 'fs'
           scan-ref: '.'
           severity: 'CRITICAL,HIGH'
-          ignore-unfixed: true
+          exit-code: '1'
+          ignore-unfixed: false
