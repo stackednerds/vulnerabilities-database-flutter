@@ -1,4 +1,4 @@
-# Vulnerabilities Database App
+# Vulnerabilities Database App 
 This is a Flutter project that implements a Vulnerability Database app. It allows users to browse and search for cybersecurity news articles and exploits. The app fetches news articles from the NewsAPI and exploits data from the Shodan Exploits API.
 
 ## Getting Started
