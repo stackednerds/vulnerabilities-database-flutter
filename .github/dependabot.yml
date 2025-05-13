@@ -1,10 +1,8 @@
 version: 2
 updates:
-  - package-ecosystem: "pub" # or "pip", "maven", "docker", etc.
-    directory: "/"           # location of package files
+  - package-ecosystem: "npm"  # Change to your package manager, e.g., "pip", "maven", "docker", etc.
+    directory: "/"             # Path to the folder with the dependency manager file (e.g., `package.json`, `requirements.txt`, etc.)
     schedule:
-      interval: "daily"      # "daily", "weekly", or "monthly"
-    open-pull-requests-limit: 5
-    commit-message:
-      prefix: "chore"
-    rebase-strategy: "auto"
+      interval: "weekly"       # Set the frequency to "daily", "weekly", or "monthly"
+    allow:
+      - dependency-type: "direct"  # This will only consider direct dependencies, not transitive ones
