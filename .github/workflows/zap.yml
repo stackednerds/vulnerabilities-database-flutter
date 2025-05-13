@@ -1,0 +1,19 @@
+name: zap Scan
+
+on:
+  pull_request:
+    branches: [master]
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
+
+jobs:
+  trivy-fs-scan:
+    name: zap
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.12.0
+        with:
+          target: 'https://demo.owasp-juice.shop/'
