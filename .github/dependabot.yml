@@ -1,9 +1,8 @@
 version: 2
 updates:
-  - package-ecosystem: "pub"  # Change to your package manager, e.g., "pip", "maven", "docker", etc.
+  - package-ecosystem: "npm"  # Change to your package manager, e.g., "pip", "maven", "docker", etc.
     directory: "/"             # Path to the folder with the dependency manager file (e.g., `package.json`, `requirements.txt`, etc.)
     schedule:
       interval: "weekly"       # Set the frequency to "daily", "weekly", or "monthly"
     allow:
       - dependency-type: "direct"  # This will only consider direct dependencies, not transitive ones
-    security-updates-only: true  # Only create PRs for vulnerabilities, no regular dependency updates
