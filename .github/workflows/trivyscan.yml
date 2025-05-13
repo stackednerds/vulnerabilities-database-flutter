@@ -23,7 +23,3 @@ jobs:
           exit-code: '1'
           ignore-unfixed: false
 
-      - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.12.0
-        with:
-          target: 'https://demo.owasp-juice.shop/'
