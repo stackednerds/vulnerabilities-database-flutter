@@ -33,13 +33,13 @@ jobs:
           docker run --rm -v "${{ github.workspace }}:/data" anchore/grype sbom:/data/sbom.spdx.json -o json > grype-output.json
 
       - name: Upload SBOM as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sbom
           path: sbom.spdx.json
 
       - name: Upload Grype JSON scan result as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: grype-json-output
           path: grype-output.json
