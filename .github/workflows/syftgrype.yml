@@ -11,35 +11,29 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Generate SBOM with Syft
-        uses: anchore/sbom-action@v0
-        with:
-          output-file: sbom.spdx.json
-          format: spdx-json
-
-      - name: Scan SBOM with Grype (table output in logs)
-        uses: anchore/scan-action@v3
-        with:
-          sbom: sbom.spdx.json
-          fail-build: false
-          severity-cutoff: medium
-          output-format: table
-
-      - name: Scan SBOM with Grype (json output to file)
+      - name: Generate SBOM with Syft Docker
         run: |
-          docker run --rm -v "${{ github.workspace }}:/data" anchore/grype sbom:/data/sbom.spdx.json -o json > grype-output.json
+          docker run --rm -v "${{ github.workspace }}:/src" anchore/syft:latest /src -o spdx-json > sbom.spdx.json
 
-      - name: Upload SBOM as artifact
-        uses: actions/upload-artifact@v3
+      - name: Scan SBOM with Grype Docker (table output)
+        run: |
+          docker run --rm -v "${{ github.workspace }}:/workdir" anchore/grype:latest sbom:/workdir/sbom.spdx.json -o table
+
+      - name: Scan SBOM with Grype Docker (json output)
+        run: |
+          docker run --rm -v "${{ github.workspace }}:/workdir" anchore/grype:latest sbom:/workdir/sbom.spdx.json -o json > grype-output.json
+
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
         with:
           name: sbom
           path: sbom.spdx.json
 
-      - name: Upload Grype JSON scan result as artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload Grype JSON artifact
+        uses: actions/upload-artifact@v4
         with:
           name: grype-json-output
           path: grype-output.json
