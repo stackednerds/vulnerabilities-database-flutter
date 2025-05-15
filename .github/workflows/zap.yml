@@ -3,17 +3,26 @@ name: zap Scan
 on:
   pull_request:
     branches: [master]
-  workflow_dispatch:  # Allows manual trigger from GitHub UI
+  workflow_dispatch:  
 
 jobs:
-  trivy-fs-scan:
-    name: zap
+  sbom-and-scan:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write  
     steps:
-      - name: Checkout Code
+      - name: Checkout repository
         uses: actions/checkout@v3
-      - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.12.0
+
+      - name: Generate SBOM with Syft
+        uses: anchore/sbom-action@v0
         with:
-          target: 'http://testhtml5.vulnweb.com'
+          output-file: sbom.spdx.json
+          format: spdx-json
+
+      - name: Scan SBOM with Grype
+        uses: anchore/scan-action@v3
+        with:
+          sbom: sbom.spdx.json
+          fail-build: false
+          severity-cutoff: medium
