@@ -16,7 +16,7 @@ jobs:
 
       - name: Generate SBOM with Syft Docker
         run: |
-          docker run --rm -v "${{ github.workspace }}:/src" anchore/syft:latest syft /src -o spdx-json > sbom.spdx.json
+          docker run --rm -v "${{ github.workspace }}:/src" anchore/syft:latest /src -o spdx-json > sbom.spdx.json
 
       - name: Scan SBOM with Grype Docker (table output)
         run: |
